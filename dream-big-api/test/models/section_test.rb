@@ -46,4 +46,18 @@ class SectionTest < ActiveSupport::TestCase
     assert section.save, "section not saved"
   end
 
+  test "should modify planet id and save existing section record " do
+    section = sections(:section)
+    section.planet_id = planets(:planet_2).id
+    section.save
+    assert_equal( planets(:planet_2).id, section.planet_id, "planet_id not modified")
+    end  
+
+    test "should modify category id and save existing section record " do
+      section = sections(:section)
+      section.category_id = categories(:category_2).id
+      section.save
+      assert_equal( categories(:category_2).id, section.category_id, "category_id not modified")
+      end 
+
 end

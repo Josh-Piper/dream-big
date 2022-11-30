@@ -46,6 +46,26 @@ class ReflectionTest < ActiveSupport::TestCase
     assert reflection.save, "reflection not saved"
   end
 
+    test "should modify section id and save existing reflection record " do
+    reflection = reflections(:reflection)
+    reflection.section_id = sections(:section_2).id
+    reflection.save
+    assert_equal( sections(:section_2).id, reflection.section_id, "section_id not modified")
+    end 
+
+    test "should modify reflection_text and save existing reflection record " do
+      reflection = reflections(:reflection)
+      reflection.reflection_text = "abc"
+      reflection.save
+      assert_equal( "abc", reflection.reflection_text, "reflection_text not modified")
+      end 
+
+      test "should modify goal id and save existing reflection record " do
+        reflection = reflections(:reflection)
+        reflection.goal_id = goals(:goal_2).id
+        reflection.save
+        assert_equal( goals(:goal_2).id, reflection.goal_id, "goal_id not modified")
+        end 
 
 
 end

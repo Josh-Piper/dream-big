@@ -28,4 +28,18 @@ class CategoryQuestionTest < ActiveSupport::TestCase
     assert question.save, "reflection not saved"
   end
 
+  test "should modify category id and save existing category question record " do
+    question = category_questions(:category_question)
+    question.category_id = categories(:category_2).id
+    question.save
+    assert_equal( categories(:category_2).id, question.category_id, "category_id not modified")
+    end 
+
+  test "should modify question field and save existing category question record " do
+    question = category_questions(:category_question)
+    question.question = "What is the question?"
+    question.save
+    assert_equal( "What is the question?", question.question, "category_id not modified")
+    end 
+
 end

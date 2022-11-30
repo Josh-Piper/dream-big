@@ -18,7 +18,10 @@
       >
       </app-avatar>
       <br/>
-      <button (click)="showProfileForm()">EDIT PROFILE</button>
+      <button (click)="profileForm = !profileForm">
+        <ng-container *ngIf="!profileForm">EDIT PROFILE</ng-container>
+        <ng-container *ngIf="profileForm">BACK</ng-container>
+      </button>
     </div>
     <div>
     <div *ngIf="profileForm">

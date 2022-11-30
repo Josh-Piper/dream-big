@@ -151,9 +151,6 @@ export class AvatarContainerComponent implements OnInit {
   }
 
   profileForm = false;
-  showProfileForm() {
-    this.profileForm = !this.profileForm;
-  }
 
   public goCompletelyRandom(): void {
     this.getRandomColors();
