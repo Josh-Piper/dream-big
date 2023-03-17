@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_13_035136) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["assessment_id"], name: "fk_rails_6b44a1e939"
-    t.index ["category_question_id"], name: "fk_rails_00d9fc308d"
+    t.in  dex ["category_question_id"], name: "fk_rails_00d9fc308d"
   end
 
   create_table "assessments", charset: "utf8mb4", force: :cascade do |t|
